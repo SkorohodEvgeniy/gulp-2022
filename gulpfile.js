@@ -7,7 +7,7 @@ const path = require("./config/path.js");
 //Tasks
 const clear = require('./task/clear.js');
 const html = require('./task/html.js');
-const css = require('./task/css.js');
+const scss = require('./task/scss.js');
 
 //Server
 const server = () =>{
@@ -21,16 +21,16 @@ const server = () =>{
 //Наблюдение
 const watcher = () => {
     watch(path.html.watch, html).on("all", browserSync.reload);
-    watch(path.css.watch, css).on("all", browserSync.reload);
+    watch(path.scss.watch, scss).on("all", browserSync.reload);
 }
 
 //Задачи
 exports.html = html;
-exports.css = css;
+exports.scss = scss;
 
 //Сборка
 exports.dev = series(
     clear,
-    parallel(html, css),
+    parallel(html, scss),
     parallel(watcher, server)
 );

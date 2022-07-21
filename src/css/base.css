@@ -1,0 +1,13 @@
+@import 'part-css/news.css';
+
+body {
+    background-color: #e9dede;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    font-size: 1em;
+    font-family: Georgia, 'Times New Roman', Times, sans-serif;
+    font-weight: 700;
+}
+
+@import 'part-css/title.css';
